@@ -40,7 +40,7 @@ class sensor extends \model\dbconnect {
         $allok = $this->_deleteDevice($this->src->idproject, \model\env::getIdUser(), $iddevice);
 
         if ($allok !== false) {
-            $texto = \model\lexi::get('g3ext/market', 'msg033') . ': ' . $deviceselected->iddevice . ', ' . $deviceselected->name;
+            $texto = \model\lexi::get('ext/market', 'msg033') . ': ' . $deviceselected->iddevice . ', ' . $deviceselected->name;
             (new \model\action($this->src))->addSystemNote($texto);
         }
     }
