@@ -21,7 +21,7 @@ class sensor extends \model\dbconnect {
         $lastrowid = $this->_insertDevice($this->src->idproject, \model\env::getIdUser(), $newdevice);
 
         if ($lastrowid !== false) {
-            $texto = \model\lexi::get('', 'sys032') . ': ' . $newdevice->name;
+            $texto = \model\lexi::get('', 'msg032') . ': ' . $newdevice->name;
             (new \model\action($this->src))->addSystemNote($texto);
         }
 
@@ -40,7 +40,7 @@ class sensor extends \model\dbconnect {
         $allok = $this->_deleteDevice($this->src->idproject, \model\env::getIdUser(), $iddevice);
 
         if ($allok !== false) {
-            $texto = \model\lexi::get('', 'sys033') . ': ' . $deviceselected->iddevice . ', ' . $deviceselected->name;
+            $texto = \model\lexi::get('g3ext/market', 'msg033') . ': ' . $deviceselected->iddevice . ', ' . $deviceselected->name;
             (new \model\action($this->src))->addSystemNote($texto);
         }
     }
